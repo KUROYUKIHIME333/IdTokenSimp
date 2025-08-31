@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Outil de Connexion Firebase</h1>
+        <div class="status-indicators">
+            <span id="connection-status" class="status-dot disconnected"></span>
+            <span id="connection-text">Déconnecté</span>
+            <span id="token-status" class="status-dot invalid"></span>
+            <span id="token-text">ID Token Invalide</span>
+        </div>
+        <form id="auth-form">
+            <div class="form-group">
+                <label for="firebase-config">Coller votre firebaseConfig ici :</label>
+                <textarea id="firebase-config" placeholder="ex: {apiKey: '...', authDomain: '...', ...}"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" placeholder="votreemail@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" placeholder="Votre mot de passe" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" id="login-button">Se connecter</button>
+                <button type="button" id="refresh-token-button" disabled>Actualiser le token</button>
+            </div>
+        </form>
+        <div id="result-message" class="message"></div>
+        <div id="token-info">
+            <h2>Informations sur l'ID Token :</h2>
+            <pre id="id-token-display"></pre>
+            <div id="token-validity"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

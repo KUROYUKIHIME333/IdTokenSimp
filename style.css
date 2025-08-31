@@ -1,0 +1,207 @@
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #1a1a1a; /* Fond noir très foncé */
+    color: #e0e0e0; /* Texte clair pour contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: #2a2a2a; /* Conteneur gris foncé */
+    padding: 35px 45px;
+    border-radius: 10px; /* Bordures légèrement adoucies */
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.15); /* Ombre verte subtile pour l'effet tech */
+    width: 100%;
+    max-width: 550px;
+    box-sizing: border-box;
+    border: 1px solid #3a3a3a; /* Bordure subtile */
+}
+
+h1 {
+    text-align: center;
+    color: #00ff88; /* Vert lumineux pour le titre */
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.status-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #333333; /* Fond pour les indicateurs */
+    border-radius: 8px;
+    border: 1px solid #444444;
+}
+
+.status-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.4); /* Effet lumineux */
+}
+
+.status-dot.connected {
+    background-color: #00ff88; /* Vert connecté */
+}
+
+.status-dot.disconnected {
+    background-color: #ff4757; /* Rouge déconnecté */
+}
+
+.status-dot.valid {
+    background-color: #00cc66; /* Vert valide */
+}
+
+.status-dot.invalid {
+    background-color: #ff6b81; /* Rouge invalide */
+}
+
+#connection-text, #token-text {
+    font-weight: 500;
+    color: #c0c0c0; /* Texte gris clair */
+    font-size: 0.95em;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #b0b0b0; /* Gris plus clair pour les labels */
+    font-size: 0.9em;
+}
+
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #444444; /* Bordure subtile */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #3a3a3a; /* Fond des champs de saisie */
+    color: #e0e0e0; /* Texte des champs de saisie */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #00bfff; /* Bleu lumineux au focus */
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.4); /* Ombre bleue */
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button {
+    flex: 1;
+    padding: 13px 20px;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #00aaff; /* Bleu action principal */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: #0088cc; /* Bleu plus foncé au survol */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.3);
+}
+
+button:disabled {
+    background-color: #555555; /* Gris désactivé */
+    color: #aaaaaa;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#result-message {
+    margin-top: 25px;
+    padding: 14px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95em;
+    border: 1px solid; /* Pour les bordures de succès/erreur */
+}
+
+#result-message.success {
+    background-color: #1a4f33; /* Fond vert foncé pour succès */
+    color: #00ff88; /* Texte vert lumineux */
+    border-color: #00ff88;
+}
+
+#result-message.error {
+    background-color: #5c2020; /* Fond rouge foncé pour erreur */
+    color: #ff6b81; /* Texte rouge lumineux */
+    border-color: #ff6b81;
+}
+
+#token-info {
+    margin-top: 30px;
+    background-color: #333333; /* Fond pour les infos token */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #444444;
+    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.1); /* Ombre légère */
+}
+
+#token-info h2 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #00ff88; /* Vert pour le titre du token */
+    border-bottom: 1px solid #444444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#id-token-display {
+    background-color: #2a2a2a; /* Fond du pre-formatted token */
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: 'Cascadia Code', 'Fira Code', 'Roboto Mono', monospace; /* Police monospace tech */
+    font-size: 0.85em;
+    color: #a0a0a0; /* Gris clair pour le code */
+    border: 1px dashed #555555; /* Bordure discrète */
+}
+
+#token-validity {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #909090; /* Gris pour la validité */
+    background-color: #3a3a3a;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444444;
+}
